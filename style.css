@@ -1,0 +1,201 @@
+
+/* ===== MODERN BLACK & PURPLE THEME ===== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, Arial, sans-serif;
+  color: #f5f5fa;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(125, 65, 255, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 85%,
+      rgba(220, 90, 255, 0.10),
+      transparent 35%
+    ),
+    #09090d;
+
+  background-attachment: fixed;
+}
+
+/* ===== ANIMATED BUTTONS ===== */
+
+button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  padding: 14px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #9147ff,
+    #6525db,
+    #a855f7
+  );
+  background-size: 200% 200%;
+
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 15px rgba(135, 65, 255, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+
+  animation: gradientFlow 5s ease infinite;
+}
+
+/* Moving shine across the button */
+
+button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+  transition: left 0.65s ease;
+}
+
+button:hover::before {
+  left: 150%;
+}
+
+/* Glow + lift */
+
+button:hover {
+  transform: translateY(-4px) scale(1.02);
+
+  border-color: rgba(210, 180, 255, 0.7);
+
+  box-shadow:
+    0 10px 30px rgba(135, 65, 255, 0.4),
+    0 0 22px rgba(168, 85, 247, 0.25);
+}
+
+/* Press animation */
+
+button:active {
+  transform: translateY(0) scale(0.97);
+
+  box-shadow:
+    0 2px 10px rgba(135, 65, 255, 0.3);
+}
+
+/* Animated gradient */
+
+@keyframes gradientFlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Keyboard accessibility */
+
+button:focus-visible {
+  outline: 2px solid #c4a1ff;
+  outline-offset: 4px;
+}
+
+/* ===== LINKS ===== */
+
+a {
+  color: #c4a1ff;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+a:hover {
+  color: #e4d3ff;
+}
+
+/* ===== GLASS CARDS ===== */
+
+.card {
+  padding: 24px;
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(168, 85, 247, 0.45);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(135, 65, 255, 0.08);
+}
+
+/* Respect reduced-motion settings */
+
+@media (prefers-reduced-motion: reduce) {
+  button {
+    animation: none;
+    transition: none;
+  }
+
+  button::before {
+    transition: none;
+  }
+
+  .card {
+    transition: none;
+  }
+}
+button{
+  display: block;
+margin: 0 auto;
+}
+h1{
+  font-family:Arial;
+  font-weight:bold;
+  text-color:purple;
+}
